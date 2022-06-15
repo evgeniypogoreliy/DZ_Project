@@ -12,25 +12,23 @@ def project():
         elif task == 1:
             var_choice = plann_or_compl()
             if var_choice == "p":
-                user_input = str(input("Введите запланированную задачу: "))
-                build_planned(user_input)
+                user_input = str(input("Введите запланированную задачу в формате (Дата задача примечание): "))
+                print(build_planned(user_input))
                 print("Запись добавдена!")
-                work = False
+                project()
             elif var_choice == "c":
-                user_input = str(input("Введите выполненую задачу: "))
+                user_input = str(input("Введите выполненую задачу в формате (Дата задача примечание): "))
                 build_compl(user_input)
                 print("Запись добавдена!")
-                work = False
+                project()
 
         elif task == 2:
             crit_find = str(input("Введите критерий поиска: "))
             print(find(crit_find))
-            work = False
-
-
+            project()
 
 def request():
-    print("Добрый день!")
+    print("Планируем дела")
     user_request = int(input("Записать задачу - 1 Найти задачу - 2 Выход - 3 :"))
 
     return user_request
