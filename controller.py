@@ -26,7 +26,8 @@ def project():
             crit_find = str(input("Введите критерий поиска: "))
             print(find(crit_find))
             project()
-
+    else:
+        print("Всего доброго!")
 def request():
     print("Планируем дела")
     user_request = int(input("Записать задачу - 1 Найти задачу - 2 Выход - 3 :"))
