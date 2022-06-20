@@ -1,3 +1,3 @@
 from controller import project
 
-m = project()
+project()

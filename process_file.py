@@ -1,9 +1,14 @@
 completed_count = 1
 plan_count = 1
 
+def print_file():
+    with open('planned_task.csv', "r") as file:
+        print(file.read())
+    
+
 def writer_completed(list):
     global completed_count
-    with open('completed_task.csv', 'a') as file:
+    with open('planned_task.csv', 'a') as file:
         file.write(f'Завершенная задача №{completed_count}: ')
         for e in list:
             file.write(f'{e} ')
