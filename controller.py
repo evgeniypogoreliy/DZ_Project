@@ -1,4 +1,5 @@
 
+from process_data import red_data
 from process_file import del_record
 from process_file import print_file
 from process_data import build_compl
@@ -14,10 +15,15 @@ def project():
                 if task == 4:
                     work = False
                 elif task == 1:
+                    user_input = str(input("Введите задачу в формате (Дата задача примечание): "))
+                    build_planned(user_input)
+                    print("Запись добавдена!")
+                    project()
+                elif task == 2:
                     var_choice = plann_or_compl()
                     if var_choice == "w":
-                        user_input = str(input("Введите задачу в формате (Дата задача примечание): "))
-                        print(build_planned(user_input))
+                        user_input = str(input("Введите задачу которую нужно отредактировать: "))
+                        red_data(user_input)
                         print("Запись добавдена!")
                         project()
                     elif var_choice == "c":
