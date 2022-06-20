@@ -8,7 +8,11 @@ def print_file():
         print(file.read())
 
 def del_record(string):
-    find(string)
+    with open('planned_task.csv', "w") as file:
+        lines = file.readline
+        #for line in lines:
+          
+     
     
 
 def writer_completed(list):
