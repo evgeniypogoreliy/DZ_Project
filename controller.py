@@ -1,4 +1,5 @@
 
+from process_file import del_record
 from process_file import print_file
 from process_data import build_compl
 from process_data import build_planned
@@ -26,12 +27,15 @@ def project():
                         project()
                     elif var_choice == "d":
                         user_input = str(input("Введите задачу которую удаляем: "))
+                        del_record(user_input)
+                        print("Задача удалена!")
 
                 elif task == 2:
                     print_file()
                     project()
 
                 elif task == 3:
+                    print_file()
                     project()
                 
                 elif task < 1 or task > 4:

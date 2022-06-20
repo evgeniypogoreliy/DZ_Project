@@ -1,9 +1,14 @@
+from find_data import find
+
 completed_count = 1
 plan_count = 1
 
 def print_file():
     with open('planned_task.csv', "r") as file:
         print(file.read())
+
+def del_record(string):
+    find(string)
     
 
 def writer_completed(list):

@@ -1,5 +1,5 @@
 from process_file import writer_planned
-from find_data import find
+
 from process_file import writer_completed
 
 def build_planned(string):
@@ -12,6 +12,5 @@ def build_compl(string):
     final_record = tuple( i for i in record.split(' '))
     writer_completed(final_record)
 
-def del_record(string):
-    find(string)
+
 
