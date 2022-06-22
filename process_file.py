@@ -1,45 +1,35 @@
-from find_data import find
 
-completed_count = 1
-plan_count = 1
 
 def print_file():
     with open('planned_task.csv', "r") as file:
         print(file.read())
 
-def del_record(string):
-    with open('planned_task.csv', "w") as file:
-        lines = file.readline
-        #for line in lines:
-          
-     
-    
+def print_compl_file():
+    with open('planned_task.csv', "r") as file:
+        print(file.read())
 
-def writer_completed(list):
-    global completed_count
-    with open('planned_task.csv', 'a') as file:
-        file.write(f'Завершенная задача №{completed_count}: ')
-        for e in list:
-            file.write(f'{e} ')
-        file.write('\n')    
-    completed_count +=1        
-    
+def del_record(string):
+    with open('planned_task.csv', "r") as file:
+        lines = file.readlines()
+    with open('planned_task.csv', 'w') as new_file:
+        for line in lines:
+            if line != (string+"\n"):
+                new_file.write(line)
+
+def writer_compl(string):
+    with open('planned_task.csv', 'r') as file:
+        p_data = file.read()
+    c_data = p_data.replace(string, string +'+')
+    with open('planned_task.csv', 'w') as file:
+        file.write(c_data)
+                
+# writer_compl('22.06 test3 p ')
 
 def writer_planned(list):
-    global plan_count
-    with open('planned_task.csv', 'a') as file:
-        file.write(f'Планируемая задача №{plan_count}: ')
+    with open('planned_task.csv', 'a+') as file:
+
         for e in list:
             file.write(f'{e} ')
         file.write('\n')    
-    plan_count +=1     
+  
 
-a = ('25.07', 'Завтрак', 'мюсли')
-b = ('26.07', 'Встреча', 'По работе')
-
-writer_completed(a)
-writer_completed(b)
-
-writer_planned(a)
-writer_planned(b)
-    
